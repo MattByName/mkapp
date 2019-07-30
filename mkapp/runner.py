@@ -15,10 +15,12 @@ def make_app_folder_structure(app_folder, app_name):
   os.mkdir("{}/data".format(app_folder))
   os.mkdir("{}/tests".format(app_folder))
   
-  
-def init_package(pkg_folder):
+
+def init_package(pkg_folder, pkg_name="runner", add_runner=False):
   init_file = open("{}/__init__.py".format(pkg_folder),"w+")
-  runner_file = open("{}/runner.py".format(pkg_folder),"w+")
+  main_file = open("{}/{}.py".format(pkg_folder, pkg_name),"w+")
+  if add_runner:
+    runner_file = open("{}/runner.py".format(pkg_folder, pkg_name),"w+")
   
 def make_app_files(app_folder, app_name):
   with open("{}/README.md".format(app_folder),"w+") as f:
@@ -42,7 +44,7 @@ def create_app(app_folder, app_name):
 
 def create_pkg(app_folder, app_name, pkg_name):
   pkg_folder = mk_pkg(app_folder, app_name, pkg_name)
-  init_package(pkg_folder)
+  init_package(pkg_folder, pkg_name)
     
 if __name__ == "__main__":
     app_name = input("App name?\n")
