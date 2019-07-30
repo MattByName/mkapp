@@ -1,1 +1,2 @@
-# mkapp
+# MKAPP A Very Simple Python CLI App Structure Manager
+This is a very simple utility intended to help organise CLI python apps using the advice in [Kyle Stratis's](https://github.com/kylestratis/) article, [Python Application Layouts: A Reference](https://realpython.com/python-application-layouts/)
